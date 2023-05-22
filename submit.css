@@ -39,7 +39,7 @@ body {
 
 .container-box {
     /* Rectangle 1 */
-    width:auto;
+    width:85%;
     position: relative;
     top: 1%;
     left:3%;
@@ -89,10 +89,20 @@ button.btn {
   /*  grid-column: 1 / span 2; */
     
 }
-div.col-1 {
+@media(min-width:600px) {
+    div.col-1 {
     
-   /* grid-column: 1 / span 1; */
+         grid-column: 1 / span 0; 
+         
+     }
+     button.btn {
+        grid-column: 1 / span 2;
+     }
+     .container-box>form {
+        grid-template-columns: repeat(2, 1fr);
+     }
 }
+
 
 div.col-1 input {
   margin: 0;
@@ -130,7 +140,8 @@ form input {
     line-height: 1.55;
 }
 
-.field {
+input[type='text'],
+input[type='tel'] {
     direction: rtl;
     width: 100%;
     padding: 0 10px 0 40px;
@@ -142,11 +153,12 @@ form input {
     height: 2.8rem;
 }
 
-.field:hover {
+input[type='tel']:hover,
+input[type='text']:hover {
 background-color: rgba(0,0,0, 0.1);
 }
 
-.field:focus {
+input[type='tel']:focus,input[type='text']:focus {
 
     background-color: #fff;
     border: 2px, solid rgba(30,85,250, 0.47);
